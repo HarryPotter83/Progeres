@@ -1,0 +1,4 @@
+import pandas as pd
+d=[[1,2,3],[4,5,6]]
+df=pd.DataFrame(d)
+print(df)#creates a data frame and prints the value taht i have stored in variable d
