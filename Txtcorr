@@ -1,0 +1,10 @@
+import pandas as pd
+import numpy as np
+from google.colab import files
+uploader=files.upload()
+df=read_csv(next(iter(uploader)))
+print(df)
+print()
+non=df.select_dtypes(include=[np.number])
+print(non.corr())
+#establishing correlation b/w data from a text(CSV) file
