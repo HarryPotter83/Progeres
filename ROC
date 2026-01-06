@@ -1,0 +1,19 @@
+
+#Plotting ROC curve after calculating auc from TPR AND FPR
+import matplotlib.pyplot as plt
+from sklearn.metrics import auc
+fpr = [0.0, 0.1, 0.2, 0.4, 1.0]
+tpr = [0.0, 0.6, 0.75, 0.9, 1.0]
+# Calculate AUC
+roc_auc = auc(fpr, tpr)
+
+plt.figure()
+plt.plot(fpr, tpr, label=f'ROC curve (AUC = {roc_auc:.2f})')
+plt.plot([0, 1], [0, 1], linestyle='--', label='Random classifier')
+
+plt.xlabel('False Positive Rate')
+plt.ylabel('True Positive Rate')
+plt.title('ROC Curve')
+plt.legend(loc='lower right')
+plt.grid(True)
+plt.show()
